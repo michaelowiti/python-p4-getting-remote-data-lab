@@ -7,7 +7,11 @@ class GetRequester:
         self.url = url
 
     def get_response_body(self):
-        pass
+          URL = "http://data.cityofnewyork.us/resource/uvks-tn5n.json"
+
+          response = requests.get(URL)
+          return response.content
 
     def load_json(self):
-        pass
+        response = self.get_response_body()
+        return response.json()
